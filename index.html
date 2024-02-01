@@ -13,71 +13,68 @@
   <title>Survey</title>
 </head>
 
-<body>
-  <div class="container">
+<body style="background-color: #222222;">
+  <div class="container-fluid">
     <div class="row">
-      <div class="col-3"></div>
-      <div class="col-6">
-        <form class="container p-5 bg-primary  border text-white" method="post" autocomplete="on">
-          <h1 class="text-center text-white ">Survey</h1>
+      <div class="col-2"></div>
+      <div class="col-8">
+        <form style="background-color: #006633; color: #FFCC33;" class="container p-5 border" method="post" autocomplete="on">
+          <h1 class="text-center">Survey</h1>
           <div class="form-group">
-            <label for="username">Username</label>
-            <input type="username" class="form-control" id="username" placeholder="Enter username">
+            <label for="username">Username<small style="display:inline; color:red;">*</small></label>
+            <input type="username" class="form-control" id="username" placeholder="Enter username" required autofocus>
           </div>
           <div class="form-group">
-            <label for="email">Email address</label>
-            <input type="email" class="form-control" id="email" placeholder="Enter email">
+            <label for="email">Email address<small style="display:inline; color:red;">*</small></label>
+            <input type="email" class="form-control" id="email" placeholder="Enter email" required>
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone</label>
+            <label for="phone">Phone<small style="display:inline; color:red;">*</small></label>
             <input type="tel" class="form-control" id="phone" placeholder="(###) ###-####"
-              pattern="\(\d{3}\) +\d{3}-\d{4}">
+              pattern="\(\d{3}\) +\d{3}-\d{4}" required>
           </div>
 
           <div class="form-group">
             <label for="address">Address</label>
             <input type="text" class="form-control" id="address" placeholder="Enter your address">
           </div>
-          <div class="form-group">
-            <div class="row">
-              <div class="col-6">
-                <label for="city">City</label>
-              </div>
-              <div class="col">
-                <label for="State">State</label>
-              </div>
-              <div class="col">
-                <label for="Zip">Zip</label>
-              </div>
+          <div class="form-row">
+            <div class="col-6">
+              <label for="city">City</label>
             </div>
+            <div class="col">
+              <label for="State">State</label>
+            </div>
+            <div class="col">
+              <label for="Zip">Zip</label>
+            </div>
+          </div>
+          <div class="form-group">
             <div class="form-row">
               <div class="col-6">
-                <input type="text" class="form-control" placeholder="Enter City">
+                <input type="text" class="form-control" id="city" placeholder="Enter City">
               </div>
               <div class="col">
-                <input type="text" class="form-control" placeholder="Enter State">
+                <input type="text" class="form-control" id="state" placeholder="Enter State">
               </div>
               <div class="col">
-                <input type="text" class="form-control" placeholder="Enter Zip">
+                <input type="text" class="form-control" id="zip" placeholder="Enter Zip">
               </div>
             </div>
           </div>
           <div class="form-group">
             <label for="url">URL</label>
-            <input type="url" class="form-control" id="url" placeholder="Enter URL">
+            <input type="url" class="form-control" id="url" placeholder="Eg: https://www.google.com/">
           </div>
           <div class="form-group">
-            <label for="date">Date of Survey</label>
-            <input type="date" class="form-control" id="date" placeholder="Choose date">
+            <label for="date">Date of Survey<small style="display:inline; color:red;">*</small></label>
+            <input type="date" class="form-control" id="date" placeholder="Choose date" required>
           </div>
 
           <div class="form-group">
-            <label for="graduationMonth" class="form-label">High School Graduation Month</label>
-            <input class="form-control" list="months" id="graduationMonth" placeholder="Choose Month">
+            <label for="graduationMonth" class="form-label">High School Graduation Month<small
+                style="display:inline; color:red;">*</small></label>
+            <input class="form-control" list="months" id="graduationMonth" placeholder="Choose Month" required>
             <datalist id="months">
               <option value="January">
               <option value="February">
@@ -94,8 +91,10 @@
             </datalist>
           </div>
           <div class="form-group">
-            <label for="graduationYear">High School Graduation Year</label>
-            <input type="text" class="form-control" placeholder="Enter Year of Graduation">
+            <label for="graduationYear">High School Graduation Year<small
+                style="display:inline; color:red;">*</small></label>
+            <input type="text" class="form-control" id="graduationYear" placeholder="Enter Year of Graduation Eg: 2024"
+              required>
           </div>
 
           <!-- Part-2 -->
@@ -152,6 +151,15 @@
           </div>
 
           <div class="form-group">
+            <label for="likelihood">How likely are you going to suggest the university</label>
+            <select class="form-control" id="likelihood">
+              <option>Very Likely</option>
+              <option>Likely</option>
+              <option>Unlikely</option>
+            </select>
+          </div>
+
+          <div class="form-group">
             <label for="comment">Comments:</label>
             <textarea class="form-control" rows="5" id="comment"></textarea>
           </div>
@@ -160,7 +168,7 @@
         </form>
 
       </div>
-      <div class="col-3"></div>
+      <div class="col-2"></div>
     </div>
   </div>
 
