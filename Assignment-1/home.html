@@ -16,51 +16,149 @@
     h5 {
       font-family: "Arial", sans-serif;
     }
+
+    ;
+
+    td,
+    th {
+      border-width: 2px;
+      border: 2px;
+    }
+
+    .padding-style {
+      text-align: center;
+      padding: 40px 0;
+      font-size: 60px;
+      /* top/bottom   left/right */
+    }
   </style>
 </head>
 
 <body class="bg-light">
-  <div class="container py-5">
-    <div class="text-center">
-      <h1 class="display-4">Computer Science Department</h1>
-      <p class="lead">Welcome to the Computer Science Department at [University Name]. We are dedicated to providing high-quality education and fostering cutting-edge research in the field of computer science.</p>
+  <div class="container-fluid bg-light">
+    <div style="background-color: #006633; color: #FFCC33;margin-bottom: -5px;" class="row">
+      <div class="col-3 p-3 p text-center">
+        <img style="width: 350px; height: 150px;" src="D:\SWE642\Assignment-1\OIP.jpg" alt="" srcset="">
+      </div>
+      <div class="col-9 padding-style">
+        <div class="font-weight-bolder">Computer Science Department</div>
+      </div>
     </div>
 
-    <div class="my-5">
-      <h2>MS Degrees Offered</h2>
+    <div class="container-fluid mt-4">
+      <div class="row">
+        <div class="col-3 text-center">
+          <img style="width: 350px; height: 420px;" src="D:\SWE642\Assignment-1\CS.jpg" alt="" srcset="">
+        </div>
+        <div class="col-9">
+          <p>The Computer Science discipline is concerned with the design, analysis, implementation, maintenance, and
+            evolution of computer-based systems, and their associated theoretical foundations. Computer science is
+            powering the information revolution of the 21st century, and computer-based systems are used in every
+            scholarly discipline, every sector of industry, and every walk of human life.</p>
+          <p>
+            Advanced computation tools and techniques are revolutionizing, transforming, and often automating the way we
+            work, play, communicate, collaborate, and conduct business. Computational approaches are integral to a broad
+            array of disciplines including computational natural and social sciences, bioinformatics, health
+            informatics,
+            digital humanities, and financial technology. In addition, the spread of computing throughout society has
+            made
+            the ethical use of computing a central concern to policymakers.</p>
+
+          <p>Computer scientists must be well-grounded in the theory of computing and in its application to diverse
+            areas,
+            and they must be able to work closely with members of other professions that use computing. The department
+            therefore offers a broad array of programs in computer science at both the undergraduate and graduate
+            levels.
+            Students who study this discipline can learn about a wide variety of concepts and methods in computer
+            science—algorithms, artificial intelligence, computer networking, cyber security, databases, data mining,
+            data
+            structures, machine learning, operating systems, programming languages, robotics, software engineering—and
+            they will explore effective and ethical applications of these concepts and methods.</p>
+            <p>Please fill out the survey</p>
+
+            <a href="D:\SWE642\Assignment-1\survey.html" class="btn btn-success btn-lg" role="button">Survey</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid mt-4">
+      <h2 style="font-weight: bolder;">MS Degrees Offered By George Mason University</h2>
       <ul class="list-group">
         <li class="list-group-item">Master of Science in Computer Science</li>
-        <li class="list-group-item">Master of Science in Artificial Intelligence</li>
-        <li class="list-group-item">Master of Science in Data Science</li>
-        <!-- Add more MS Degrees as needed -->
+        <li class="list-group-item">Master of Science in Information Security and Assurance</li>
+        <li class="list-group-item">Master of Science in Information Systems</li>
+        <li class="list-group-item">Master of Science in Software Engineering</li>
       </ul>
     </div>
 
-    <div class="my-5">
-      <h2>Required Courses</h2>
-      <table class="table">
+    <br>
+    <div class="container-fluid mt-4">
+      <h2 style="font-weight: bolder;">Required Courses</h2>
+      <table class="table table-bordered">
         <thead>
           <tr>
-            <th scope="col">MS Degree</th>
-            <th scope="col">Course Number</th>
-            <th scope="col">Course Name</th>
+            <th scope="col" class="bg-secondary">MS Degree</th>
+            <th scope="col" class="bg-secondary">Course Number</th>
+            <th scope="col" class="bg-secondary">Course Name</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td rowspan="3">Master of Science in Computer Science</td>
-            <td>CS 501</td>
-            <td>Advanced Algorithms</td>
+            <td>CS 583</td>
+            <td>Analysis of Algorithms</td>
           </tr>
           <tr>
-            <td>CS 502</td>
+            <td>CS 530</td>
+            <td>Mathematical foundationsof Science</td>
+          </tr>
+          <tr>
+            <td>CS 531</td>
+            <td>C programming</td>
+          </tr>
+
+          <tr>
+            <td rowspan="3">Master of Science in Information Security and Assurance</td>
+            <td>ISA 562</td>
+            <td>Information Security Theory and Practice</td>
+          </tr>
+          <tr>
+            <td>ISA 656</td>
+            <td>Network Security</td>
+          </tr>
+          <tr>
+            <td>INFS 612</td>
+            <td>Principles and Practices of Communication Networks</td>
+          </tr>
+
+          <tr>
+            <td rowspan="3">Master of Science in Information Systems</td>
+            <td>COMP 502</td>
+            <td>Mathematical Foundations of Computing I</td>
+          </tr>
+          <tr>
+            <td>CS 550</td>
             <td>Database Systems</td>
           </tr>
           <tr>
-            <td>CS 503</td>
-            <td>Software Engineering</td>
+            <td>INFS 622</td>
+            <td>Information Systems Analysis and Design</td>
           </tr>
-          <!-- Add more rows for additional courses or MS Degrees -->
+
+
+          <tr>
+            <td rowspan="3">Master of Science in Software Engineering</td>
+            <td>SWE 619</td>
+            <td>Object-Oriented Software Specification and Construction</td>
+          </tr>
+          <tr>
+            <td>SWE 621</td>
+            <td>Software Design and Architecture</td>
+          </tr>
+          <tr>
+            <td>SWE 632</td>
+            <td>User Interface Design and Development</td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -71,4 +169,3 @@
 </body>
 
 </html>
-
