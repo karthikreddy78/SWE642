@@ -21,7 +21,7 @@ h1 {
   color: #006633;
 }
 </style>
-    
+    <script src="assignment2.js"></script>
   <title>Survey</title>
 </head>
 
@@ -32,15 +32,15 @@ h1 {
       <div class="col-8">
         <h1 class="div2 text-center">Survey</h1>
         <br>
-        <form style="background-color: #006633; color: #FFCC33;" class="container p-5 border" method="post" autocomplete="on">
+        <form style="background-color: #006633; color: #FFCC33;" class="container p-5 border" id = "surveyForm" name = "surveyForm" autocomplete="on" onsubmit="return validateForm()">
           
           <div class="form-group">
             <label for="username">Username<small style="display:inline; color:red;">*</small></label>
-            <input type="username" class="form-control" id="username" placeholder="Enter username" required autofocus>
+            <input type="text" name="username" class="form-control" id="username" placeholder="Enter username" required autofocus>
           </div>
           <div class="form-group">
             <label for="email">Email address<small style="display:inline; color:red;">*</small></label>
-            <input type="email" class="form-control" id="email" placeholder="Enter email" required>
+            <input type="text" class="form-control" id="email" placeholder="Enter email" required>
           </div>
           <div class="form-group">
             <label for="phone">Phone<small style="display:inline; color:red;">*</small></label>
@@ -49,8 +49,8 @@ h1 {
           </div>
 
           <div class="form-group">
-            <label for="address">Address</label>
-            <input type="text" class="form-control" id="address" placeholder="Enter your address">
+            <label for="address">Address<small style="display:inline; color:red;">*</small></label>
+            <input type="text" class="form-control" id="address" placeholder="Enter your address" required> 
           </div>
           <div class="form-row">
             <div class="col-6">
@@ -66,13 +66,14 @@ h1 {
           <div class="form-group">
             <div class="form-row">
               <div class="col-6">
-                <input type="text" class="form-control" id="city" placeholder="Enter City">
+                <span class="form-control" id="city"></span>
               </div>
               <div class="col">
-                <input type="text" class="form-control" id="state" placeholder="Enter State">
+                <span class="form-control" id="state"></span>
               </div>
               <div class="col">
-                <input type="text" class="form-control" id="zip" placeholder="Enter Zip">
+                <input type="text" class="form-control" id="zip" placeholder="Enter Zip" onblur="validateZip(this.value)">
+                <span id = "validateZip"></span>
               </div>
             </div>
           </div>
@@ -144,22 +145,22 @@ h1 {
             What interests you in the university?
             <div class="form-check">
               <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="interests"> Friends
+                <input type="radio" class="form-check-input" name="interests" id="interests"> Friends
               </label>
             </div>
             <div class="form-check">
               <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="interests">Television
+                <input type="radio" class="form-check-input" name="interests" id="interests">Television
               </label>
             </div>
             <div class="form-check">
               <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="interests">Internet
+                <input type="radio" class="form-check-input" name="interests" id="interests">Internet
               </label>
             </div>
             <div class="form-check">
               <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="interests">Other
+                <input type="radio" class="form-check-input" name="interests" id="interests">Other
               </label>
             </div>
           </div>
@@ -174,11 +175,37 @@ h1 {
           </div>
 
           <div class="form-group">
+            <label for="data">Enter 10 comma separated Integers</label>
+            <input class="form-control" type="text" name="data" id="data" placeholder="Enter 10 comma separated integers from 1 to 100" onblur="calculate()" required>
+          </div>
+
+          <div class="form-group">
+            <div class="form-row">
+              <div class="col-6">
+                <label for="average">Average:</label>
+                <output id="average" name="average" class="form-control"></output>
+              </div>
+              <div class="col-6">
+                <label for="maximum">Maximum:</label>
+                <output class="form-control"  id="maximum" name="maximum"></output>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
             <label for="comment">Comments:</label>
             <textarea class="form-control" rows="5" id="comment"></textarea>
           </div>
 
-          <button type="submit" class="btn btn-success btn-block">Submit</button>
+          <div class="row">
+            <div class="col-6">
+              <button type="submit" class="btn btn-success btn-block">Submit</button>
+            </div>
+            <div class="col-6">
+              <button type="reset" class="btn btn-danger btn-block">Reset</button>
+            </div>
+          </div>
+          
         </form>
 
       </div>
