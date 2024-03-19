@@ -1,0 +1,10 @@
+Home Work 2 By Karthik Reddy Musku G01446785
+Index.html
+http://swe-642-hw-1.s3-website-us-east-1.amazonaws.com/
+
+Survey.html
+http://swe-642-hw-1.s3-website-us-east-1.amazonaws.com/survey.html
+
+Info.html
+http://swe-642-hw-1.s3-website-us-east-1.amazonaws.com/info.html
+

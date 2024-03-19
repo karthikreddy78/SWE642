@@ -1,0 +1,23 @@
+em {
+    font-size: 20px;
+    color: red;
+}
+h1 {
+    font-size :2opx;
+}
+
+.div1 {
+    padding : 2px ;
+    border: 4px solid red;
+    margin: 12px ;
+    width: 12em;
+    overflow: scroll;
+}
+
+.div2 {
+    padding : 1px ;
+    border: 14px solid blue;
+    margin: 40px ;
+    width: 22em;
+    background-color: aliceblue;
+}
