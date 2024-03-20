@@ -1,0 +1,38 @@
+<table class="table table-dark">
+    <thead>
+        <tr class="text-center">
+            <th scope="col">FirstName</th>
+            <th scope="col">LastName</th>
+            <th scope="col">StreetAddress</th>
+
+            <th scope="col">City</th>
+            <th scope="col">State</th>
+            <th scope="col">Zip</th>
+            <th scope="col">TelephoneNumber</th>
+            <th scope="col">Email</th>
+            <th scope="col">DateOfSurvey</th>
+            <th scope="col">LikedMost</th>
+            <th scope="col">InterestedMost</th>
+            <th scope="col">Likelihood</th>
+            <th scope="col">AdditionalComments</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let survey of surveys">
+            <td>{{survey.firstName}}</td>
+            <td>{{survey.lastName}}</td>
+            <td>{{survey.streetAddress}}</td>
+            <td>{{survey.city}}</td>
+            <td>{{survey.state}}</td>
+            <td>{{survey.zip}}</td>
+            <td>{{survey.telephoneNumber}}</td>
+            <td>{{survey.email}}</td>
+            <td>{{survey.dateOfSurvey | date}}</td>
+            <td>{{survey.likedMost}}</td>
+            <td>{{survey.interestedMost}}</td>
+            <td>{{survey.likelihood}}</td>
+            <td>{{survey.additionalComments}}</td>
+        </tr>
+    </tbody>
+</table>
