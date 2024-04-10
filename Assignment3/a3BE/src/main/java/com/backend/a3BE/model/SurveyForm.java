@@ -29,7 +29,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-@Table(name = "survey")
+@Table(name = "surveyData")
 public class SurveyForm {
 
     @Id
@@ -48,26 +48,32 @@ public class SurveyForm {
     @Column(name = "streetAddress")
     private String streetAddress;
 
+    @NotNull(message = "City is required")
     @Column(name = "city")
     private String city;
 
+    @NotNull(message = "State is required")
     @Column(name = "state")
     private String state;
 
+    @NotNull(message = "Zip is required")
     @Column(name = "zip")
     private String zip;
 
-    @Pattern(regexp="\\(\\d{3}\\)\\s\\d{3}-\\d{4}", message="Invalid Telephone number format")
+    @NotNull(message = "Telephone Number is required")
+    @Pattern(regexp="^\\+?[0-9]{10}$", message="Invalid Telephone number format")
     @Column(name = "telephoneNumber")
     private String telephoneNumber;
 
+    @NotNull(message = "Email is required")
     @Email(message = "Invalid email format")
     @Column(name = "email")
     private String email;
 
-    @JsonFormat(pattern = "MM-dd-yyyy")
+    @NotNull(message = "Survey Date is required")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     @Column(name = "dateOfSurvey")
-    @DateTimeFormat(pattern = "MM-dd-yyyy")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dateOfSurvey;
 
     @Column(name = "likedMost")

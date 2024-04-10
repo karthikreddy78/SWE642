@@ -28,4 +28,23 @@ public class SurveyServiceImpl implements SurveyService{
 		
 	}
 
+	@Override
+	public SurveyForm updateSurvey(SurveyForm survey) {
+		// TODO Auto-generated method stub
+		
+		System.out.println(survey.toString());
+		
+		return surveyRepository.save(survey);
+	}
+
+	@Override
+	public void deleteSurvey(Long id) {
+		// TODO Auto-generated method stub
+		System.out.println(id);
+		SurveyForm survey = surveyRepository.findById(id).get();
+		
+		System.out.println(survey.toString());
+		surveyRepository.delete(survey);
+	}
+
 }

@@ -8,5 +8,9 @@ public interface SurveyService {
 	List<SurveyForm> allSurveys();
 
     public SurveyForm saveSurvey(SurveyForm survey);
+    
+    public SurveyForm updateSurvey(SurveyForm survey);
+    
+    public void deleteSurvey(Long id);
 
 }
