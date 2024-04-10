@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SurveyService } from '../survey.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,9 +9,19 @@ import { SurveyService } from '../survey.service';
 })
 export class HomeComponent implements OnInit {
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    
   }
 
-  constructor(private surveyService:SurveyService) { }
+  constructor(private surveyService:SurveyService,  private router: Router) { }
+
+  addSurvey(){
+    console.log("New survey added");
+    
+    this.router.navigate(['/add-survey']);
+  }
+
+  listSurveys() {
+    this.router.navigate(['/view-surveys']);
+  }
 
 }

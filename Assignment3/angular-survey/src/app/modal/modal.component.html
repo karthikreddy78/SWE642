@@ -1,0 +1,120 @@
+<h2 mat-dialog-title class="text-center">Update Survey </h2>
+
+<form #form="ngForm" (ngSubmit)="onSubmit()">
+
+  <div>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>First Name</mat-label>
+
+      <input matInput name="firstName" id="firstName" #firstName="ngModel" [(ngModel)]="survey.firstName" required>
+
+      <!-- <mat-error *ngIf="form.controls['firstName'].hasError('required')">First Name is required</mat-error> -->
+    </mat-form-field>
+
+  </div>
+  <mat-form-field class="full-width" appearance="outline">
+    <mat-label>Last Name</mat-label>
+    <input matInput name="lastName" [(ngModel)]="survey.lastName" required>
+    <!-- <mat-error *ngIf="form.controls['lastName'].hasError('required')">Last Name is required</mat-error> -->
+  </mat-form-field>
+  <mat-form-field class="full-width" appearance="outline">
+    <mat-label>Email</mat-label>
+    <input matInput name="email" [(ngModel)]="survey.email" type="email" required>
+
+    <!-- <mat-error *ngIf="form.controls['email'].hasError('required')">Email is required</mat-error> -->
+  </mat-form-field>
+  <mat-form-field class="full-width" appearance="outline">
+    <mat-label>Phone Number</mat-label>
+    <input matInput name="phoneNumber" [(ngModel)]="survey.telephoneNumber" required>
+
+    <!-- <mat-error *ngIf="form.controls['phoneNumber'].hasError('required')">Telephone Number is required</mat-error> -->
+  </mat-form-field>
+
+  <mat-form-field class="full-width" appearance="outline">
+    <mat-label>Street Address</mat-label>
+    <input matInput name="streetAddress" [(ngModel)]="survey.city" required>
+
+
+    <!-- <mat-error *ngIf="form.controls['streetAddress'].hasError('required')">Street Address is required</mat-error> -->
+
+  </mat-form-field>
+
+
+  <mat-form-field class="full-width" appearance="outline">
+    <mat-label>City</mat-label>
+    <input matInput name="city" [(ngModel)]="survey.city" required>
+
+
+    <!-- <mat-error *ngIf="form.controls['city'].hasError('required')">City is required</mat-error> -->
+
+  </mat-form-field>
+  <mat-form-field class="full-width" appearance="outline">
+    <mat-label>State</mat-label>
+    <input matInput name="state" [(ngModel)]="survey.state" required>
+
+    <!-- <mat-error *ngIf="form.controls['state'].hasError('required')">State is required</mat-error> -->
+
+  </mat-form-field>
+  <mat-form-field class="full-width" appearance="outline">
+    <mat-label>ZIP</mat-label>
+    <input matInput name="zip" [(ngModel)]="survey.zip" required>
+
+    <!-- <mat-error *ngIf="form.controls['zip'].hasError('required')">Zip is required</mat-error> -->
+  </mat-form-field>
+  <mat-form-field class="full-width" appearance="outline">
+    <mat-label>Date</mat-label>
+    <input matInput name="date" [(ngModel)]="survey.dateOfSurvey" [matDatepicker]="picker" required>
+
+
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+    <!-- <mat-error *ngIf="form.controls['date'].hasError('required')">Date is required</mat-error> -->
+  </mat-form-field>
+
+  <div>What do you like most about the campus?
+    <div *ngFor="let key of survey.likedMost">
+      <mat-checkbox name="likedMost" [(ngModel)]=key.checked [checked]="key.checked"> {{ key.label }}
+
+      </mat-checkbox>
+      {{key.label}} {{key.checked}}
+    </div>
+    <div *ngFor="let key of survey.likedMost">
+      <label>
+        <input type="checkbox" [checked]="key.checked"> {{ key.label }}
+      </label>
+          </div>
+
+  </div>
+
+  <div>What interests you in the university?
+    <mat-radio-group [(ngModel)]="survey.interestedMost" name="interest">
+      <div *ngFor="let interest of interested">
+        <mat-radio-button [value]="interest">{{ interest }}</mat-radio-button>
+      </div>
+
+    </mat-radio-group>
+  </div>
+
+  <div>
+    <mat-form-field>
+      <mat-label>How likely are you going to suggest the university</mat-label>
+      <mat-select [(ngModel)]="survey.likelihood" name="like">
+        <mat-option *ngFor="let like of likelihoodValues" [value]="like">{{ like }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field>
+      <mat-label>Additional Comments</mat-label>
+      <textarea matInput name="comments" [(ngModel)]="survey.additionalComments"></textarea>
+    </mat-form-field>
+  </div>
+
+  <div class="button-container">
+    <button mat-raised-button class="mat-button-large" color="primary" type="submit" [disabled]="!form.valid"
+      [mat-dialog-close]="true">Submit</button>
+    <button mat-raised-button class="mat-button-large" color="warn" type="button" (click)="onCancel()">Cancel</button>
+  </div>
+</form>

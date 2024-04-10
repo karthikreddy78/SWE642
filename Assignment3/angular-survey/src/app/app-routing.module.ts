@@ -5,14 +5,14 @@ import { InfoComponent } from './info/info.component';
 import { ViewSurveysComponent } from './view-surveys/view-surveys.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { SampleFormComponent } from './sample-form/sample-form.component';
 
 const routes: Routes = [
-
-  {path:'home', component:HomeComponent},
-  
-  {path:'info', pathMatch:'full', component:InfoComponent},
-  {path:'survey', pathMatch:'full', component:SurveyComponent},
-  {path:'view-surveys', pathMatch:'full', component:ViewSurveysComponent},
+  {path:'home', component: HomeComponent},
+  {path:'view-surveys', component:ViewSurveysComponent},
+  {path:'add-survey', component:SurveyComponent},
+  {path:'sample-form', component:SampleFormComponent},
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path:'**', component:PageNotFoundComponent}
 ];
 

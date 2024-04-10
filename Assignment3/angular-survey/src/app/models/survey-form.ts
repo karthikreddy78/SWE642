@@ -1,19 +1,22 @@
 export class SurveyForm {
-    firstName: string;
-    lastName: string;
-    streetAddress: string;
-    city: string;
-    state: string;
-    zip: string;
-    telephoneNumber: string;
-    email: string;
-    dateOfSurvey: Date;
-    likedMost: string;
-    interestedMost: string;
-    likelihood: string;
-    additionalComments: string;
+    id:number = 0;
+    firstName: string='';
+    lastName: string='';
+    streetAddress: string ='';
+    city: string='';
+    state: string='';
+    zip: string='';
+    telephoneNumber: string='';
+    email: string='';
+    dateOfSurvey: Date | null = null;
+    likedMost: any;
+    interestedMost: string='';
+    likelihood: string='';
+    additionalComments: string='';
 
-    constructor(
+ 
+    
+    /*constructor(
         firstName: string,
         lastName: string,
         streetAddress: string,
@@ -42,6 +45,9 @@ export class SurveyForm {
         this.likelihood = likelihood;
         this.additionalComments = additionalComments;
     }
+    */
+
+    constructor(){}
 
 
 }

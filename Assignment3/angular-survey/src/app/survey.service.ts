@@ -25,7 +25,17 @@ export class SurveyService {
   //   return this.http.post(API_URL+"/save",survey, {headers: this.getHeaders});
   // }
 
-  addSurvey(survey:SurveyForm) {
-    return survey;
+  createSurvey(survey:SurveyForm): Observable<any>{
+    return this.http.post(API_URL+"/saveSurvey", survey);
   }
+
+  deleteSurvey(id: number): Observable<any>{
+    return this.http.delete(API_URL+"/deleteSurvey/"+id);
+  }
+
+  updateSurvey(survey:SurveyForm): Observable<any>{
+    return this.http.post(API_URL+"/editSurvey", survey);
+  }
+  
+
 }

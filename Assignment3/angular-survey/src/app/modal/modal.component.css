@@ -1,0 +1,16 @@
+mat-form-field {
+    width: 100%;
+  }
+
+  .button-container {
+    display: flex; /* Use flexbox layout */
+    justify-content: space-between; /* Distribute items along the main axis with equal space between them */
+    font-size: 20px; /* Increase font size */
+    padding: 15px 30px; /* Increase padding */
+  }
+  
+  /* Optional: Add margin between buttons */
+  .button-container button {
+    margin-right: 10px;
+  }
+  
