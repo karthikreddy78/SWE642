@@ -3,6 +3,8 @@ import { Component, Inject, OnInit } from '@angular/core';
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { SurveyForm } from '../models/survey-form';
 import { SurveyService } from '../survey.service';
+import { log } from 'node:console';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-modal',
@@ -51,6 +53,12 @@ Object: any;
     }
     */
     console.log("Yo", this.survey);
+    console.log("Checkboxes", this.survey.likedMost);
+    this.survey.likedMost.forEach((key: any) => { console.log(key.label, key.checked===true);
+    
+      
+    });
+    
     //var checkboxValues = this.survey.likedMost.split(',');
     //console.log(checkboxValues);
     
@@ -80,6 +88,8 @@ console.log(this.survey.likedMost);
       //this.goToSurveyList();
     },
     error => console.log(error));
+    
+    alert("Response Successfully Updated");
   }
 
   displayErrorMessage(input: any) {

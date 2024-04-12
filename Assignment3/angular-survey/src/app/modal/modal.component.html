@@ -74,16 +74,10 @@
 
   <div>What do you like most about the campus?
     <div *ngFor="let key of survey.likedMost">
-      <mat-checkbox name="likedMost" [(ngModel)]=key.checked [checked]="key.checked"> {{ key.label }}
+      <mat-checkbox name="{{ key.label }}" [(ngModel)]="key.checked"> {{ key.label }}
 
       </mat-checkbox>
-      {{key.label}} {{key.checked}}
     </div>
-    <div *ngFor="let key of survey.likedMost">
-      <label>
-        <input type="checkbox" [checked]="key.checked"> {{ key.label }}
-      </label>
-          </div>
 
   </div>
 

@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,22 +28,22 @@ public class SurveyController {
     private SurveyService surveyService;
 
     @GetMapping(value = "/findAll")
-    public List<SurveyForm> findAll() {
-        return surveyService.allSurveys();
+    public  ResponseEntity<List<SurveyForm>> findAll() {
+        return ResponseEntity.ok(surveyService.allSurveys());
     }
 
     @PostMapping(value = "/saveSurvey")
     @ResponseStatus(HttpStatus.CREATED)
-    public SurveyForm create(@RequestBody SurveyForm resource) {
+    public ResponseEntity<SurveyForm> create(@RequestBody SurveyForm resource) {
     	System.out.println(resource);
-        return surveyService.saveSurvey(resource);
+        return  ResponseEntity.ok(surveyService.saveSurvey(resource));
     }
     
     @PutMapping(value = "/editSurvey/{id}")
-    public SurveyForm updateRequest(@RequestBody SurveyForm resource, @PathVariable Long id) {
+    public ResponseEntity<SurveyForm> updateRequest(@RequestBody SurveyForm resource, @PathVariable Long id) {
     	System.out.println(resource);
     	
-        return surveyService.saveSurvey(resource);
+        return  ResponseEntity.ok(surveyService.updateSurvey(resource, id));
     }
     
     @DeleteMapping(value = "/deleteSurvey/{id}")

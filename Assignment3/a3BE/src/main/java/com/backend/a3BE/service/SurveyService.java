@@ -9,7 +9,7 @@ public interface SurveyService {
 
     public SurveyForm saveSurvey(SurveyForm survey);
     
-    public SurveyForm updateSurvey(SurveyForm survey);
+    public SurveyForm updateSurvey(SurveyForm survey, Long id);
     
     public void deleteSurvey(Long id);
 
