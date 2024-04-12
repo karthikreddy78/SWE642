@@ -17,7 +17,6 @@ onCancel() {
   survey: SurveyForm = new SurveyForm();
   interested: string[] = ['Friends', 'Television', 'Internet', 'Other'];
 
-  //likedMost: string[] = ['Students', 'Location', 'Campus', 'Atmosphere', 'Dorm rooms', 'Sports'];
   likedMost = [
     { label: 'Students', checked: false },
     { label: 'Location', checked: false },
@@ -27,22 +26,17 @@ onCancel() {
     { label: 'Sports', checked: false }
   ];
 
-  // Method to convert checkbox data to JSON
-  getCheckboxDataAsJson() {
-    return JSON.stringify(this.likedMost);
-  }
+
   selectedOptions: {[key: string]: boolean} = {};
   likelihoodValues = [ 'Very Likely', 'Likely', 'Not Likely'];
-    // Example select options
   likelihood: string = '';
-  selectedTeam: string = ''
  
-
   ngOnInit(): void {
     throw new Error('Method not implemented.');
   }
   constructor(private surveyService:SurveyService, private router: Router) { }
 
+  //Create a survey
   saveSurvey(){
     this.surveyService.createSurvey(this.survey).subscribe( data =>{
       console.log(data);
@@ -62,22 +56,19 @@ onCancel() {
     if (phoneNumberPattern.test(this.survey.telephoneNumber)) {
       return null;
     } else {
-      // Phone number is invalid, set validity status
       return { invalidPhoneNumber: true };
     }
   }
 
   displayErrorMessage(input: any) {
-    // Mark the input as touched to display error message
     if (input.control.hasError('required')) {
-      console.log('Date of birth is required');
+      console.log('Input is required');
     } else {
       input.control.markAsTouched();
     }
   }
 
   displayDOS(input: any) {
-    // Mark the input as touched to display error message
     return (this.survey.dateOfSurvey == null);
   }
 
@@ -88,8 +79,6 @@ onCancel() {
     }
   
   onSubmit(){
-    //console.log(this.selectedTeam);
-    //console.log(this.selectedOptions);
     this.survey.likedMost = JSON.stringify(this.likedMost);
     console.log(this.survey.likedMost);
        

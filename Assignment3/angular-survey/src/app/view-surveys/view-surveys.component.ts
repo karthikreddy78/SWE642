@@ -14,22 +14,16 @@ import {MatButtonModule} from '@angular/material/button';
   styleUrl: './view-surveys.component.css'
 })
 export class ViewSurveysComponent implements OnInit {
- 
-
   public surveys: SurveyForm [] = [];
 
   constructor(private surveyService:SurveyService, private route: ActivatedRoute, private router: Router, private dialog:MatDialog) { 
-    //this.listSurveys();
-
     this.router.routeReuseStrategy.shouldReuseRoute = function(){
       return false;
    }
 
    this.router.events.subscribe((evt) => {
       if (evt instanceof NavigationEnd) {
-         // trick the Router into believing it's last link wasn't previously loaded
          this.router.navigated = false;
-         // if you need to scroll back to top, here is the right place
          this.listSurveys();
          window.scrollTo(0, 0);
       }
@@ -40,6 +34,7 @@ export class ViewSurveysComponent implements OnInit {
     
   }
 
+  //Display all surveys
   listSurveys() {
     
     this.surveyService.fetchSurveys()
@@ -48,6 +43,7 @@ export class ViewSurveysComponent implements OnInit {
     console.log(this.surveys);
   }
 
+  //Updating a record
   updateRecord(survey: SurveyForm) {
     console.log(survey);
     let d=this.dialog.open(ModalComponent,{height:'600px',width:'600px',data:{survey}});
@@ -58,6 +54,8 @@ export class ViewSurveysComponent implements OnInit {
         
       })
   }
+
+  //Deleting a record
   deleteRecord(survey: SurveyForm) {
 
 
@@ -79,7 +77,6 @@ export class ViewSurveysComponent implements OnInit {
         )
         this.surveyService.deleteSurvey(survey.id).subscribe(data => {
           console.log(data);
-          //this.snack.open("User Registered Successfully", '',{duration:3000});
         
     
           let currentUrl = this.router.url;

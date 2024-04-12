@@ -14,12 +14,14 @@ export class HomeComponent implements OnInit {
 
   constructor(private surveyService:SurveyService,  private router: Router) { }
 
+  //Navigate to add-survey
   addSurvey(){
     console.log("New survey added");
     
     this.router.navigate(['/add-survey']);
   }
 
+  //Navigate to view-surveys
   listSurveys() {
     this.router.navigate(['/view-surveys']);
   }

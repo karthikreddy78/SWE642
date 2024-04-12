@@ -23,7 +23,6 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
-import { SampleFormComponent } from './sample-form/sample-form.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +32,7 @@ import { SampleFormComponent } from './sample-form/sample-form.component';
     InfoComponent,
     SurveyComponent,
     ViewSurveysComponent,   
-    PageNotFoundComponent, ModalComponent, SampleFormComponent
+    PageNotFoundComponent, ModalComponent,
   ],
   imports: [
     BrowserModule,
